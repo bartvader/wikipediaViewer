@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+		<title>WikiViewer</title>
+		<script src="E:\\Всячина\\JS_Projects\\WikiViewer\\jquery-3.1.1.min.js" > </script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="E:\\Всячина\\JS_Projects\\WikiViewer\\js.js" > </script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body ng-app="appWikiViewer">
+    <div class="container row-md-4">
+        <div ng-controller="MainFrame"  class="container col-md-4 ">
+          <a rel="nofollow" rel="noreferrer"class="white-text" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click here for a random article</a><br/>
+          <label for="usr">Search:</label>
+		  <form ng-submit="search()">
+          <input   type="text" class="form-control" id="txtInputForSearch" ng-model="searchText" />
+         <!-- <button ng-click="startSearch()" type="submit" class="btn-submit" >Go!</button> -->
+		  </form>
+	 <div class="wrapper">
+    <ul><a rel="nofollow" rel="noreferrer"ng-href="{{result.page}}" target="_blank" ng-repeat="result in results">
+			<li>
+			  <h1>{{result.title}}</h1>
+			  <p>{{result.body}}</p>
+			</li>
+		</a>
+	</ul>
+  </div>
+  </div>
+		</div>
+		
+    </div>
+	
+  </body>
+</html>
